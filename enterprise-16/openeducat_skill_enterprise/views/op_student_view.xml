@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="view_op_student_view_form" model="ir.ui.view">
+            <field name="name">op.student.form</field>
+            <field name="model">op.student</field>
+            <field name="priority" eval="100"/>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="openeducat_core.view_op_student_form"/>
+            <field name="arch" type="xml">
+                <notebook position="inside">
+                    <page name="student_skills" string="Skills">
+                        <separator string="Skill Assessment"/>
+                        <div class="o_hr_skills_group o_group_skills">
+                            <field mode="tree" name="student_skill_line" widget="student_skills">
+                                <tree>
+                                    <field name="student_skill_type_id" invisible="1"/>
+                                    <field name="student_skills_id"/>
+                                    <field name="student_skill_level_id"/>
+                                    <field name="progress" widget="progressbar"/>
+                                </tree>
+                            </field>
+                        </div>
+                    </page>
+                </notebook>
+            </field>
+        </record>
+    </data>
+</odoo>

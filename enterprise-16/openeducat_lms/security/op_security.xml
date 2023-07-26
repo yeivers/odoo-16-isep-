@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="1">
+        <record model="ir.rule" id="lms_course_multi_comp_rule">
+            <field name="name">LMS Course multi-company</field>
+            <field name="model_id" ref="openeducat_lms.model_op_course"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">
+                ['|','|',('company_id','=',False),('company_id','child_of',[user.company_id.id]),('company_id','in',user.company_ids.ids),('company_id','in',company_ids)]
+            </field>
+        </record>
+
+        <record model="ir.rule" id="course_section_multi_comp_rule">
+            <field name="name">course section multi-company</field>
+            <field name="model_id" ref="openeducat_lms.model_op_course_section"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">
+                ['|','|',('company_id','=',False),('company_id','child_of',[user.company_id.id]),('company_id','in',user.company_ids.ids),('company_id','in',company_ids)]
+            </field>
+        </record>
+
+        <record model="ir.rule" id="course_material_multi_comp_rule">
+            <field name="name">course material multi-company</field>
+            <field name="model_id" ref="openeducat_lms.model_op_course_material"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">
+                ['|','|',('company_id','=',False),('company_id','child_of',[user.company_id.id]),('company_id','in',user.company_ids.ids),('company_id','in',company_ids)]
+            </field>
+        </record>
+
+        <record model="ir.rule" id="course_category_multi_comp_rule">
+            <field name="name">course category multi-company</field>
+            <field name="model_id" ref="openeducat_lms.model_op_course_category"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">
+                ['|','|',('company_id','=',False),('company_id','child_of',[user.company_id.id]),('company_id','in',user.company_ids.ids),('company_id','in',company_ids)]
+            </field>
+        </record>
+
+        <record model="ir.rule" id="course_enrollment_comp_rule">
+            <field name="name">course enrollment multi-company</field>
+            <field name="model_id" ref="openeducat_lms.model_op_course_enrollment"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">
+                ['|','|',('company_id','=',False),('company_id','child_of',[user.company_id.id]),('company_id','in',user.company_ids.ids),('company_id','in',company_ids)]
+            </field>
+        </record>
+
+        <record model="ir.rule" id="course_enrollment_material_multi_comp_rule">
+            <field name="name">course enrollment material multi-company</field>
+            <field name="model_id" ref="openeducat_lms.model_op_course_enrollment_material"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">
+                ['|','|',('company_id','=',False),('company_id','child_of',[user.company_id.id]),('company_id','in',user.company_ids.ids),('company_id','in',company_ids)]
+            </field>
+        </record>
+
+        <record model="ir.rule" id="material_multi_comp_rule">
+            <field name="name">material multi-company</field>
+            <field name="model_id" ref="openeducat_lms.model_op_material"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">
+                ['|','|',('company_id','=',False),('company_id','child_of',[user.company_id.id]),('company_id','in',user.company_ids.ids),('company_id','in',company_ids)]
+            </field>
+        </record>
+
+        <record id="lms_material_1_admin" model="ir.rule">
+            <field name="name">Admin Material Rule</field>
+            <field name="model_id" ref="model_op_material"/>
+            <field name="groups" eval="[(4, ref('openeducat_core.group_op_back_office'))]"/>
+            <field name="domain_force">[(1,'=',1)]</field>
+        </record>
+
+    </data>
+</odoo>

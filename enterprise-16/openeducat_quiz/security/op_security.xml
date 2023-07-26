@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="1">
+        <record model="ir.rule" id="quiz_category_multi_comp_rule">
+            <field name="name">Quiz Category multi-company</field>
+            <field name="model_id" ref="openeducat_quiz.model_op_quiz_category"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">
+                ['|','|',('company_id','=',False),('company_id','child_of',[user.company_id.id]),('company_id','in',user.company_ids.ids),('company_id','in',company_ids)]
+            </field>
+        </record>
+
+        <record model="ir.rule" id="question_bank_multi_comp_rule">
+            <field name="name">Question bank multi-company</field>
+            <field name="model_id" ref="openeducat_quiz.model_op_question_bank"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">
+                ['|','|',('company_id','=',False),('company_id','child_of',[user.company_id.id]),('company_id','in',user.company_ids.ids),('company_id','in',company_ids)]
+            </field>
+        </record>
+
+        <record model="ir.rule" id="question_bank_line_multi_comp_rule">
+            <field name="name">Question bank line multi-company</field>
+            <field name="model_id" ref="openeducat_quiz.model_op_question_bank_line"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">
+                ['|','|',('company_id','=',False),('company_id','child_of',[user.company_id.id]),('company_id','in',user.company_ids.ids),('company_id','in',company_ids)]
+            </field>
+        </record>
+
+        <record model="ir.rule" id="question_bank_answer_multi_comp_rule">
+            <field name="name">Question bank answer multi-company</field>
+            <field name="model_id" ref="openeducat_quiz.model_op_question_bank_answer"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">
+                ['|','|',('company_id','=',False),('company_id','child_of',[user.company_id.id]),('company_id','in',user.company_ids.ids),('company_id','in',company_ids)]
+            </field>
+        </record>
+
+        <record model="ir.rule" id="question_bank_type_multi_comp_rule">
+            <field name="name">Question bank type multi-company</field>
+            <field name="model_id" ref="openeducat_quiz.model_op_question_bank_type"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">
+                ['|','|',('company_id','=',False),('company_id','child_of',[user.company_id.id]),('company_id','in',user.company_ids.ids),('company_id','in',company_ids)]
+            </field>
+        </record>
+
+        <record model="ir.rule" id="quiz_result_message_multi_comp_rule">
+            <field name="name">Quiz result message multi-company</field>
+            <field name="model_id" ref="openeducat_quiz.model_op_quiz_result_message"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">
+                ['|','|',('company_id','=',False),('company_id','child_of',[user.company_id.id]),('company_id','in',user.company_ids.ids),('company_id','in',company_ids)]
+            </field>
+        </record>
+
+        <record model="ir.rule" id="quiz_multi_comp_rule">
+            <field name="name">Quiz multi-company</field>
+            <field name="model_id" ref="openeducat_quiz.model_op_quiz"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">
+                ['|','|',('company_id','=',False),('company_id','child_of',[user.company_id.id]),('company_id','in',user.company_ids.ids),('company_id','in',company_ids)]
+            </field>
+        </record>
+
+        <record model="ir.rule" id="quiz_line_multi_comp_rule">
+            <field name="name">Quiz line multi-company</field>
+            <field name="model_id" ref="openeducat_quiz.model_op_quiz_line"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">
+                ['|','|',('company_id','=',False),('company_id','child_of',[user.company_id.id]),('company_id','in',user.company_ids.ids),('company_id','in',company_ids)]
+            </field>
+        </record>
+
+        <record model="ir.rule" id="quiz_answer_multi_comp_rule">
+            <field name="name">Quiz answer multi-company</field>
+            <field name="model_id" ref="openeducat_quiz.model_op_quiz_answer"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">
+                ['|','|',('company_id','=',False),('company_id','child_of',[user.company_id.id]),('company_id','in',user.company_ids.ids),('company_id','in',company_ids)]
+            </field>
+        </record>
+
+        <record model="ir.rule" id="answer_grade_multi_comp_rule">
+            <field name="name">Answer grade multi-company</field>
+            <field name="model_id" ref="openeducat_quiz.model_op_answer_grade"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">
+                ['|','|',('company_id','=',False),('company_id','child_of',[user.company_id.id]),('company_id','in',user.company_ids.ids),('company_id','in',company_ids)]
+            </field>
+        </record>
+
+        <record model="ir.rule" id="quiz_config_multi_comp_rule">
+            <field name="name">Quiz config multi-company</field>
+            <field name="model_id" ref="openeducat_quiz.model_op_quiz_config"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">
+                ['|','|',('company_id','=',False),('company_id','child_of',[user.company_id.id]),('company_id','in',user.company_ids.ids),('company_id','in',company_ids)]
+            </field>
+        </record>
+
+        <record model="ir.rule" id="quiz_result_multi_comp_rule">
+            <field name="name">Quiz result multi-company</field>
+            <field name="model_id" ref="openeducat_quiz.model_op_quiz_result"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">
+                ['|','|',('company_id','=',False),('company_id','child_of',[user.company_id.id]),('company_id','in',user.company_ids.ids),('company_id','in',company_ids)]
+            </field>
+        </record>
+
+        <record model="ir.rule" id="quiz_result_line_multi_comp_rule">
+            <field name="name">Quiz result line multi-company</field>
+            <field name="model_id" ref="openeducat_quiz.model_op_quiz_result_line"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">
+                ['|','|',('company_id','=',False),('company_id','child_of',[user.company_id.id]),('company_id','in',user.company_ids.ids),('company_id','in',company_ids)]
+            </field>
+        </record>
+
+        <record model="ir.rule" id="quiz_result_line_answers_multi_comp_rule">
+            <field name="name">Quiz result line answers multi-company</field>
+            <field name="model_id" ref="openeducat_quiz.model_op_quiz_result_line_answers"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">
+                ['|','|',('company_id','=',False),('company_id','child_of',[user.company_id.id]),('company_id','in',user.company_ids.ids),('company_id','in',company_ids)]
+            </field>
+        </record>
+
+    </data>
+</odoo>

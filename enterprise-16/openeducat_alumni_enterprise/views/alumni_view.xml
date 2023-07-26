@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="alumni_form_view">
+            <field name="name">op.student.form</field>
+            <field name="model">op.student</field>
+            <field name="inherit_id" ref="openeducat_core.view_op_student_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='title']" position="before">
+                    <field name="alumni_boolean"/>
+                    <label for="alumni_boolean" string="Is an Alumni?"/>
+                    <br/>
+                </xpath>
+                <xpath expr="//notebook/page[@name='educational']" position="after">
+                    <page string="Alumni Details" attrs="{'invisible':[('alumni_boolean','=',False)]}">
+                        <group colspan="4" col="4">
+                            <field name="alumni_id"/>
+                            <field name="passing_year_id"/>
+                            <field name="current_position"/>
+                            <field name="current_job"/>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="op_alumni_group_act" model="ir.actions.act_window">
+            <field name="name">alumni</field>
+            <field name="res_model">op.student</field>
+            <field name="binding_view_types">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="alumni_form_view"/>
+        </record>
+    </data>
+</odoo>
